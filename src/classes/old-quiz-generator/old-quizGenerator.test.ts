@@ -1,11 +1,12 @@
-
+it('is commented out', () => {})
+/* 
 
 import DataService from '../dataService';
 import IQuestion from '../../interfaces/question.interface';
-import QuizGenerator from './quizGenerator';
+import QuizGenerator from './old-quizGenerator';
 import IQuiz from '../../interfaces/quiz.interface';
 import percentageOf from '../../helper-functions/percentageOf';
-import {tenBaseDateQuestions, tenfifteenDaysEarlierQuestions, tentwentyDaysEarlierQuestions, nineCorrect33Percent25April, tenQuestionsCorrect60Percent, tenQuestionsCorrect40Percent, } from './quizGeneratorTestData';
+import {tenBaseDateQuestions, tenfifteenDaysEarlierQuestions, tentwentyDaysEarlierQuestions, nineCorrect33Percent25April, tenQuestionsCorrect60Percent, tenQuestionsCorrect40Percent, } from './old-quizGeneratorTestData';
  './quizGeneratorTestData';
 
 const stubDataService: DataService = new DataService()
@@ -170,3 +171,4 @@ Q. What is the design for implementing the strategy
 A. A web app that you enter in things you want to know and understand in the form of questions and answers. You think of a question that will best test your understanding, and a matching answer that best answers the question. On regular basis, you run a quiz, of say 10 questions, the question you enetered will be asked, you attempt to answer the question, after you answer you reveal the correct answer, and then you mark yourself correct or inccect. The more often you get a question right, the less chance it will have of being asked again, the more you get a question wrong, the higher chance it will have of being asked again. Importantly though, the probability a question will be asked will be also weighted by how it has been since the last question was asked. For example, a question that was asked yesterday and has been answered correctly 1 out of 10 times may have the same probability of being asked as a question that has been answered correctly 9 out of 10 times if the last time the question was asked was 3 months ago. Even though you probably most certainly know the answer the 2nd question, the app is re indenting your neural pathway by making you answer the same question again, and if you get it right a 10th time, then maybe that question now wont be asked again for another 6 months. The app will be designed to constantly indent neural pathways on things you want to know in the most time effective value way there is. Therefore coming as close as possible to the ideal way of achieving the knowledge and understanding we want.
 `
 
+ */

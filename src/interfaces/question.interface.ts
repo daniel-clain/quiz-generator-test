@@ -1,5 +1,11 @@
+import { ITag } from "./tag.interface";
+
 export default interface IQuestion{
-  timesAsked: number
-  timesAnsweredCorrectly: number
+  id: string
+  value: string
+  correctAnswer: string
+  correctnessRating: number
   dateLastAsked: Date
+  dateLastUpdated: Date
+  tags: ITag[]
 }

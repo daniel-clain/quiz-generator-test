@@ -1,4 +1,4 @@
-import DataService from '../dataService';
+/* import DataService from '../dataService';
 import IQuiz from '../../interfaces/quiz.interface';
 import IQuestion from '../../interfaces/question.interface';
 import IQuestionWithRating from '../../interfaces/questionWithRating';
@@ -87,4 +87,4 @@ export default class QuizGenerator{
       return questionWithRandomValue
     })
   }
-}
+} */

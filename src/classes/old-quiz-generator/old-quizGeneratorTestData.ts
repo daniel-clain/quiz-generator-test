@@ -1,4 +1,4 @@
-
+/* 
 import IQuestion from '../../interfaces/question.interface';
 
 
@@ -83,3 +83,4 @@ export const nineCorrect33Percent25April = (): IQuestion[] => {
   }
   return nineCorrect33Percent25April
 }
+ */
