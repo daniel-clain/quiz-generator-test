@@ -4,11 +4,8 @@ import IQuestion from "../../interfaces/question.interface";
 import { ITag } from "../../interfaces/tag.interface";
 
 export class QuizGenertator{
-  private questionService: QuestionService
-
-  constructor(){
-    this.questionService = new QuestionService(null)
-  }
+  
+  constructor(private questionService: QuestionService){}
 
   public generateQuiz(quizTags?: ITag[]): IQuiz {
     const tagFilteredQuestions: IQuestion[] = this.questionService.getQuestionsByTag(quizTags)
@@ -18,6 +15,6 @@ export class QuizGenertator{
   }
 
   private choseQuizQuestions(tagFilteredQuestions: IQuestion[]): IQuestion[]{
-    return
+    return tagFilteredQuestions.slice(0, 10)
   }
 }

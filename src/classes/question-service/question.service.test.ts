@@ -1,31 +1,56 @@
+
 import { QuestionService } from "./question.service";
-import { ITag } from "../../interfaces/tag.interface";
 import IQuestion from "../../interfaces/question.interface";
 import DataService from "../data-service/data.service";
-import { Observable } from "rxjs";
 
-
-class MockDataService{
-  connected: Observable<boolean>
-  get questions(): IQuestion[]{
-    const stubQuestions = [
-      {value: 'fuck ya cunt', tags: [{id: 'cock', name: 'x'}]}
+class DataServiceMock extends DataService{
+  connected
+  getQuestions(): IQuestion[]{
+    const questions: IQuestion[] =  [
+      {
+        id: null,
+        value: 'mock question',
+        correctAnswer: null,
+        correctnessRating: null,
+        dateLastAsked: null,
+        dateLastUpdated: null,
+        tags: []
+      }
     ]
-    return <IQuestion[]>stubQuestions
+    return questions
   }
 }
-const mockDataService: DataService = new MockDataService()
 
-it ('should make a mock instance of data service when question service is instanciated', () => {
-  
+const mockDataServiceInstance: DataServiceMock =  new DataServiceMock()
 
-  const questionServiceInstance = new QuestionService(mockDataService)
-  const returnedQuestions = questionServiceInstance.getQuestionsByTag([{id: 'cock', name: 'x'}])
-  expect(returnedQuestions[0].value).toBe('fuck ya cunt')
+xdescribe('getQuestionsByTag()', () => {
+  it('should return stub questions from mock data service and not real data service', () => {
+    const testInstance = new QuestionService(mockDataServiceInstance)
+    const returnedQuestions: IQuestion[] = testInstance.getQuestionsByTag()
+    expect(returnedQuestions).not.toBe(undefined)
+    expect(returnedQuestions[0].value).not.toBe('x')
+    expect(returnedQuestions[0].value).toBe('mock question')
+  });
 });
 
 
-xdescribe ('getQuestionsByTag', () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* xdescribe ('getQuestionsByTag', () => {
   
   describe ('test 2 questions where each one has a tag that matches one of the 2 argument tags', () => {    
 
@@ -117,9 +142,9 @@ xdescribe ('getQuestionsByTag', () => {
       expect(resultQuestions.every(resultQuestion => stubQuestions.some(stubQuestion => stubQuestion.id == resultQuestion.id)))
       expect(resultQuestions.length).toBe(1)      
     })    
-  })
+  }) 
 
 
 
 
-});
+});*/

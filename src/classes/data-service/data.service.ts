@@ -5,10 +5,9 @@ export default class DataService{
 
   connected: Observable<boolean>
 
-  constructor(){}
   
-  get questions(): IQuestion[]{
-    let questions: IQuestion[] =  [
+  getQuestions(): IQuestion[]{
+    const questions: IQuestion[] =  [
       {
         id: 'x',
         value: 'x',
